@@ -118,6 +118,8 @@ class LLM:
         print("timeout=", self.config.timeout)
         print("temperature=", self.config.temperature)
         print("top_p=", self.config.top_p)
+        self.config.custom_llm_provider = "openai"
+        self.config.base_url = "http://localhost:8000/v1"
         self._completion = partial(
             litellm_completion,
             model=self.config.model,
