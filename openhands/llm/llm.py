@@ -109,6 +109,15 @@ class LLM:
         if self.config.drop_params:
             litellm.drop_params = self.config.drop_params
 
+        print("model=", self.config.model)
+        print("api_key=", self.config.api_key)
+        print("base_url=", self.config.base_url)
+        print("api_version=", self.config.api_version)
+        print("custom_llm_provider=", self.config.custom_llm_provider)
+        print("max_tokens=", self.config.max_output_tokens)
+        print("timeout=", self.config.timeout)
+        print("temperature=", self.config.temperature)
+        print("top_p=", self.config.top_p)
         self._completion = partial(
             litellm_completion,
             model=self.config.model,
